@@ -1,0 +1,15 @@
+#!/bin/bash
+
+if [ $1 == 'gui' ]
+then
+        echo "WARNING GRAPHICAL TARGET"
+        sudo systemctl set-default graphical
+        sudo reboot
+elif [ $1 == 'cli' ]
+then
+        echo "WARNING CLI TARGET"
+        sudo systemctl set-default multi-user.target
+        sudo reboot
+else
+        echo "gui, cli"
+fi
